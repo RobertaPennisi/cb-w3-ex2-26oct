@@ -24,40 +24,42 @@ for (x of numbers) {
   parsedNumbers.push(parseInt(x));
 }
 
-/*if (operationChoice === "somma") {
-  Calculator(sum, parsedNumbers);
-}
-if (operationChoiche === "moltiplicazione") {
-  Calculator(mult, parsedNumbers);  
-}
-if (operationChoice === "sottrazione" || operationChoice === "-") {
-    Calculator(subtr, parsedNumbers);
-}
-if (operationChoiche === "divisione" || operationChoice === "/") {
-    Calculator(divide, parsedNumbers)  
-}
-if (operationChoiche === "potenza" || operationChoice === "**") {
-    Calculator(elevate, parsedNumbers);  
-  }*/
+  
+switch (parsedNumbers.length) {
+    case 1 :
+        console.log(...parsedNumbers)
+        break;
 
- switch (operationChoice) {
-      case "somma" || "+" :
+    default:
+         switch (operationChoice) {
+      case "somma" :
+      case "+" :
         Calculator(sum, parsedNumbers);
           break;
-      case "moltiplicazione" || "*" :
+       
+      case "moltiplicazione" :
+      case "*" :
         Calculator(mult, parsedNumbers);
           break;
-      case "sottrazione" || "-" :
+
+      case "sottrazione" :
+      case "-" :
         Calculator(subtr, parsedNumbers);
           break;
-      case "divisione" || "/" :
+
+      case "divisione" :
+      case "/" :
         Calculator(divide, parsedNumbers);
           break;
-      case "potenza" || "**" :
+
+      case "potenza" :
+      case "**" :
         Calculator(elevate, parsedNumbers);
           break;
+
       default:
         alert("valori non validi")
           break;
   }
-  
+        break;
+}
