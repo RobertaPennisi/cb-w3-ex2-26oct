@@ -7,6 +7,7 @@ const divide = (numOne, numTwo) => numOne / numTwo;
 const elevate = (numOne, numTwo) => numOne ** numTwo;
 
 
+
 function Calculator(operation, numbers) {
     let totOperation = 0;
     totOperation = operation(...numbers);
@@ -15,7 +16,7 @@ function Calculator(operation, numbers) {
     return totOperation;
 }
 
-let operationChoice = prompt("Inserisci operazione: ");
+let operationChoice = prompt("Inserisci operazione.\nScegli tra: \nsomma || + \nsottrazione || - \nmoltiplicazione || * \ndivisione || / \npotenza || ** \nradice");
 let numbersChoiche = prompt("Inserisci numeri: ");
 const numbers = numbersChoiche.split(",");
 const parsedNumbers = [];
@@ -24,10 +25,20 @@ for (x of numbers) {
   parsedNumbers.push(parseInt(x));
 }
 
-  
+
+
+
 switch (parsedNumbers.length) {
     case 1 :
-        console.log(...parsedNumbers)
+        switch (operationChoice) {
+            case "radice":
+                console.log(Math.sqrt(...parsedNumbers))
+                break;
+        
+            default:
+                console.log(...parsedNumbers)
+                break;
+        }
         break;
 
     default:
